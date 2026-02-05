@@ -1,0 +1,47 @@
+
+{
+    "prep_response": {
+    "camera_config": "null",
+    "code": "2202",
+    "ref_id": "8191-1000000035-32dql3n0y6tgie2o24l4u6jzgm05ef",
+    "smile_job_id": "1000000035",
+    "upload_url": "https://smile-uploads-test-eu.s3-accelerate.amazonaws.com/videos/8191/8191-1000000035-32dql3n0y6tgie2o24l4u6jzgm05ef/upload.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIA4OAOFXPAK5EJF5UP%2F20260116%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20260116T140258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJIMEYCIQDyqta8im2yF%2BsFDusroeNgzq%2FlKliSsX4FOe2%2BGBNoLgIhAKN%2FLZmThUVJRqvOMEFQg9S%2BOdztuYPrSWNo0Q4hyXTeKoYDCE8QAxoMODU0NzI4MjI3Nzc2IgymQE0yBBZ7rytshAkq4wJvVRmSqntT20hWbpq3YSKgZBVoXOdRxeK7QFyFQycHloJqqt2iJHKW6vpgp9JwW69eG%2FL%2FMzxVDBzbDf8HvQmnhNslZKGhFJdBvSXEy32qDwEVfhU%2FpWpWks5eELzWVcJtoe0Z4qBpVAVxHNrsJurVumOvYh9TolPeQ9IVivXrIFqAOeTTtheY2TG2d80ttrbMynwfnGyz1ZgbaXGtxKFImsUWsW2nYyH38ktbFBLyhswZXQMsN734ClST78ZPz5XB1XTnfq7lFbLEydVeAisRpXPR87okONJy%2Fw1eC0wm3OQ%2FG2ct9HXUNb06TPVvBmnlecVHhOBjAMKgS9eeC5HuELzq6MdcPg7ZcZJJAOWS62pGFFqv9OCumYIFDjiYXwWzovL3wG9ewuzbp1P3sfq5BQxEeHOitGw2eMu%2F9r6RYPgl1npoVMIwjC%2FQaPIqUP00L87iAKmCsCbUAruQUMswivoUMPSIqcsGOp0B3ff2jc%2B3s%2BDpvvTMBTazIQ0fFCod%2BiF5w1Ne1Cn%2BUIFsHYCTg%2B448J4d9XD7zlBOujSuBS%2F8klifFPDpP%2Bij%2FSbF3VlLYjZuqGpkGUHxgUJttuyfquQQO2dDoDcamAfsYfNOrvgBFAHUsyHpR8AtyvGONBYM3KD10NMAY7ZDhOrsQkLBUuJEZRtkgVx5BxHVFjMq0joK%2FFEVzeDVDw%3D%3D&X-Amz-Signature=b005c3cd8d04a2ac3e6a46cd80f1e677228e9d81c8698b35ac84faaaa74a5970&X-Amz-SignedHeaders=host&x-amz-checksum-crc32=AAAAAA%3D%3D&x-amz-sdk-checksum-algorithm=CRC32&x-id=PutObject"
+  },
+  "uploadedAt": 1768572180767,
+  "result": {
+    "Actions": {
+      "Human_Review_Compare": "Not Applicable",
+      "Human_Review_Liveness_Check": "Not Applicable",
+      "Human_Review_Selfie_Check": "Not Applicable",
+      "Human_Review_Update_Selfie": "Not Applicable",
+      "Liveness_Check": "Passed",
+      "Register_Selfie": "Rejected",
+      "Return_Personal_Info": "Not Returned",
+      "Selfie_Check": "Failed",
+      "Selfie_Provided": "Passed",
+      "Selfie_To_ID_Authority_Compare": "Completed",
+      "Selfie_To_ID_Card_Compare": "Not Applicable",
+      "Selfie_To_Registered_Selfie_Compare": "Not Applicable",
+      "Update_Registered_Selfie_On_File": "Not Applicable",
+      "Verify_ID_Number": "Verified"
+    },
+    "ConfidenceValue": "0",
+    "ImageLinks": {
+      "id_photo_image": "https://smile-results-test-eu.s3.eu-west-1.amazonaws.com/test/000000/8191/8191-1000000035-32dql3n0y6tgie2o24l4u6jzgm05ef/ID_Photo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIA4OAOFXPAKZEAYD2L%2F20260116%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20260116T140307Z&X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJIMEYCIQCnVfbJDktP8jjabj4%2FpB%2B0G%2FdFayeDXIOxZEH%2Bo6p44QIhANI25jB0smFplQqYVk6kEF9D7c5TSDTVfndjOK9XYUQQKosDCE8QAxoMODU0NzI4MjI3Nzc2IgzCZGL%2FpUCtF3pH2j0q6AKtoeSkGth1e98kdxJyiXaDEB15aisvth7%2BKfgqC9bWGTQGbh0CDuyDibsO2JV9x%2BY3o9pahzGKYyKBIJG3tTRt9KvLCZQPPIPT%2Beo0uxMlnc8xocsnS44VmzBaKknVTxcJuO%2Bpla%2Bz1j03tTdhYpKuX8d%2BQYeDU6BvO7dOPxhyWrQSwrgd3bbIkjX24jyRG5bNFT%2FwshTuEuGQyvYKnhB6OOVtyzJAbkzbTYf4Pzdk862bOhzQHIdMAmMAKfHhm4DfWX6Bny33CR6%2F%2BshcU3o4Op0T6zRFu4xBcvvIySwvZku143QdNmKaSH1zbLvsbXiateITvKO%2FhANatN7E4zbObHCB0B%2BAXxjmVrWa4bkRxX3MyqLhbtNq%2FqUEEoBPn381vvmrD027MO0a5C2aU252OVsLlZo4merspm2BATjB%2FkRrsFGv6iI0bDQj6RdFj6CjkFQTUWyfMYrNuRRvSgSu%2FjZqyvPelNUwzImpywY6nAFkNU%2BbCFVASIXhdOYafeCmR4%2B1v9hB%2FSCBdA4Rkcs%2B23XANqmUoFmlb%2FzNzP%2BSCZ0%2FUaLV6Rqh2SZ%2FIWbAAZ90m%2Fi0djv23m26asGUt6VrzV43QxJ3zwXxj6MtfQNdhRCiQxUHVg4XtRzKyYhqgA9LaNsNREpJWuoiEo5%2B7nNT3Xxf%2FzcUGXziJxUTekX%2BN2%2FFOC7eBmzXKOvbcXk%3D&X-Amz-Signature=13ff7af3de9fa892748b4a298af32b336b7509f42249e0d10343014d460649cd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "selfie_image": "https://smile-results-test-eu.s3.eu-west-1.amazonaws.com/test/000000/8191/8191-1000000035-32dql3n0y6tgie2o24l4u6jzgm05ef/SID_Preview_Full.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIA4OAOFXPAKZEAYD2L%2F20260116%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20260116T140307Z&X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJIMEYCIQCnVfbJDktP8jjabj4%2FpB%2B0G%2FdFayeDXIOxZEH%2Bo6p44QIhANI25jB0smFplQqYVk6kEF9D7c5TSDTVfndjOK9XYUQQKosDCE8QAxoMODU0NzI4MjI3Nzc2IgzCZGL%2FpUCtF3pH2j0q6AKtoeSkGth1e98kdxJyiXaDEB15aisvth7%2BKfgqC9bWGTQGbh0CDuyDibsO2JV9x%2BY3o9pahzGKYyKBIJG3tTRt9KvLCZQPPIPT%2Beo0uxMlnc8xocsnS44VmzBaKknVTxcJuO%2Bpla%2Bz1j03tTdhYpKuX8d%2BQYeDU6BvO7dOPxhyWrQSwrgd3bbIkjX24jyRG5bNFT%2FwshTuEuGQyvYKnhB6OOVtyzJAbkzbTYf4Pzdk862bOhzQHIdMAmMAKfHhm4DfWX6Bny33CR6%2F%2BshcU3o4Op0T6zRFu4xBcvvIySwvZku143QdNmKaSH1zbLvsbXiateITvKO%2FhANatN7E4zbObHCB0B%2BAXxjmVrWa4bkRxX3MyqLhbtNq%2FqUEEoBPn381vvmrD027MO0a5C2aU252OVsLlZo4merspm2BATjB%2FkRrsFGv6iI0bDQj6RdFj6CjkFQTUWyfMYrNuRRvSgSu%2FjZqyvPelNUwzImpywY6nAFkNU%2BbCFVASIXhdOYafeCmR4%2B1v9hB%2FSCBdA4Rkcs%2B23XANqmUoFmlb%2FzNzP%2BSCZ0%2FUaLV6Rqh2SZ%2FIWbAAZ90m%2Fi0djv23m26asGUt6VrzV43QxJ3zwXxj6MtfQNdhRCiQxUHVg4XtRzKyYhqgA9LaNsNREpJWuoiEo5%2B7nNT3Xxf%2FzcUGXziJxUTekX%2BN2%2FFOC7eBmzXKOvbcXk%3D&X-Amz-Signature=d6dbf7c446ece8a12defa9ca0595d8cb75f207f2b1403c5283fed861912d634b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    },
+    "KYCReceipt": "https://portal.usesmileid.com/api/v3/8191/job_result_summary/1000000035/generate_pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqb2JfaWQiOiIxMDAwMDAwMDM1IiwicGFydG5lcl9pZCI6IjgxOTEiLCJpYXQiOjE3Njg1NzIxODcsImV4cCI6MTc3NjM0ODE4N30.fuaTlEN57Rwi_nq9TjMS3ndHrMXyEeqL2X-tFFtawXk&environment=test",
+    "PartnerParams": {
+      "job_id": "f549c9c8-ba81-4e5e-90ac-2d738ec966ed",
+      "job_type": 1,
+      "user_id": "23c2a692-89f0-47ac-a6be-cf7578e7fd52"
+    },
+    "ResultCode": "0811",
+    "ResultText": "Failed Enroll - No Face Match",
+    "SmileJobID": "1000000035",
+    "Source": "rest_api 1.0.0",
+    "signature": "x5ltPOObpwtjidj325iY6iY/q6rVNFUEubH5iPkoeHU=",
+    "timestamp": "2026-01-16T14:03:07.283Z"
+  },
+  "completedAt": 1768572187908
+}
