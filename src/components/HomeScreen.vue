@@ -1,7 +1,6 @@
 <template>
   <div class="min-h-screen bg-background py-8 px-4 sm:px-6 lg:px-8">
     <div class="max-w-xl mx-auto">
-      <!-- Header -->
       <div class="text-center mb-8 header-enter">
         <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary mb-4">
           <Shield class="w-8 h-8 text-primary-foreground" />
@@ -16,16 +15,17 @@
           Powered by SmileID
         </p>
 
-        <!-- Progress indicator -->
         <div class="flex items-center justify-center gap-2 mt-6">
-          <div v-for="s in [1, 2, 3]" :key="s" class="h-1.5 rounded-full transition-all duration-300"
-            :class="progressClass(s)" />
+          <div
+            v-for="s in [1, 2, 3]"
+            :key="s"
+            class="h-1.5 rounded-full transition-all duration-300"
+            :class="progressClass(s)"
+          />
         </div>
       </div>
 
-      <!-- Steps -->
       <Transition name="step" mode="out-in">
-        <!-- Step 1 -->
         <VerificationCard v-if="step === 1" key="step1">
           <div class="p-6">
             <h2 class="text-lg font-semibold text-foreground mb-1">
@@ -36,8 +36,15 @@
             </p>
 
             <div class="space-y-3">
-              <VerificationTypeCard v-for="type in verificationTypes" :key="type.id" :id="type.id" :name="type.name"
-                :description="type.description" :selected="kycType === type.id" @select="handleTypeChange">
+              <VerificationTypeCard
+                v-for="type in verificationTypes"
+                :key="type.id"
+                :id="type.id"
+                :name="type.name"
+                :description="type.description"
+                :selected="kycType === type.id"
+                @select="handleTypeChange"
+              >
                 <template #icon>
                   <component :is="type.icon" class="w-5 h-5" />
                 </template>
@@ -51,7 +58,6 @@
           </div>
         </VerificationCard>
 
-        <!-- Step 2 -->
         <VerificationCard v-else-if="step === 2" key="step2">
           <div class="p-6">
             <h2 class="text-lg font-semibold text-foreground mb-1">
@@ -61,8 +67,10 @@
               Enter the required information below
             </p>
 
-            <!-- Basic/Enhanced/Biometric -->
-            <div v-if="!isAml && kycType !== 'document'" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              v-if="!isAml && kycType !== 'document'"
+              class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
               <FormField v-model="userInputs.country" label="Country" placeholder="e.g. KE" :delay="0" />
               <FormField v-model="userInputs.id_type" label="ID Type" placeholder="e.g. NATIONAL_ID" :delay="0.05" />
               <FormField v-model="userInputs.id_number" label="ID Number" placeholder="Your ID number" :delay="0.1" />
@@ -71,31 +79,41 @@
               <FormField v-model="userInputs.dob" label="Date of Birth" placeholder="YYYY-MM-DD" :delay="0.25" />
             </div>
 
-            <!-- Document verification -->
-            <div v-else-if="kycType === 'document'" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              v-else-if="kycType === 'document'"
+              class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
               <FormField v-model="docInputs.country" label="Country" placeholder="e.g. KE" :delay="0" />
               <FormField v-model="docInputs.id_type" label="ID Type" placeholder="e.g. NATIONAL_ID" :delay="0.05" />
             </div>
 
-            <!-- AML -->
             <div v-else class="space-y-4">
-              <FormField v-model="amlCountriesText" label="Countries (comma-separated)" placeholder="e.g. KE, UG"
-                :delay="0" />
+              <FormField
+                v-model="amlCountriesText"
+                label="Countries (comma-separated)"
+                placeholder="e.g. KE, UG"
+                :delay="0"
+              />
               <FormField v-model="amlInputs.full_name" label="Full Name" placeholder="John Doe" :delay="0.05" />
               <FormField v-model="amlInputs.birth_year" label="Birth Year" placeholder="e.g. 1998" :delay="0.1" />
             </div>
           </div>
 
-          <!-- Camera section for non-AML (SmileCapture-style binding) -->
           <div v-if="!isAml" class="border-t border-border bg-muted/30 p-6">
             <div class="relative fade-in">
               <div class="smart-camera-container bg-muted/50 rounded-xl p-2">
-                <!-- Document mode: capture-id -->
-                <smart-camera-web v-if="needsDocumentCapture" ref="cameraEl" theme-color="#0d9488"
-                  capture-id></smart-camera-web>
+                <smart-camera-web
+                  v-if="needsDocumentCapture"
+                  ref="cameraEl"
+                  theme-color="#0d9488"
+                  capture-id
+                ></smart-camera-web>
 
-                <!-- Normal mode -->
-                <smart-camera-web v-else ref="cameraEl" theme-color="#0d9488"></smart-camera-web>
+                <smart-camera-web
+                  v-else
+                  ref="cameraEl"
+                  theme-color="#0d9488"
+                ></smart-camera-web>
               </div>
             </div>
 
@@ -104,7 +122,6 @@
             </p>
           </div>
 
-          <!-- Action buttons -->
           <div class="p-6 pt-0 flex gap-3">
             <Button variant="outline" class="flex-1" @click="step = 1">
               Back
@@ -113,23 +130,27 @@
             <Button v-if="isAml" class="flex-1 gap-2" :disabled="loading" @click="submitAml">
               <span v-if="loading">Processing...</span>
               <span v-else>Run AML Check</span>
-
               <ChevronRight v-if="!loading" class="w-4 h-4" />
             </Button>
           </div>
-
         </VerificationCard>
 
-        <!-- Step 3 -->
         <VerificationCard v-else key="step3">
           <div class="p-6">
-            <ProcessingResults :status="statusType" :jobId="jobId" :userId="userId" :error="error"
-              :savedImages="savedImages" :submitResponse="submitResponse" :jobStatus="status" :onReset="handleReset" />
+            <ProcessingResults
+              :status="statusType"
+              :jobId="jobId"
+              :userId="userId"
+              :error="error"
+              :savedImages="displayedSavedImages"
+              :submitResponse="submitResponse"
+              :jobStatus="status"
+              :onReset="handleReset"
+            />
           </div>
         </VerificationCard>
       </Transition>
 
-      <!-- Footer -->
       <p class="text-center text-xs text-muted-foreground mt-8 footer-enter">
         Your data is encrypted and securely processed
       </p>
@@ -196,7 +217,6 @@ const savedImages = ref<SavedImage[]>([]);
 
 let pollTimer: number | null = null;
 
-// Inputs (Basic/Enhanced/Biometric)
 const userInputs = ref({
   country: "",
   id_type: "",
@@ -206,14 +226,12 @@ const userInputs = ref({
   dob: "",
 });
 
-// Inputs (AML) — countries array like SmileCapture
 const amlInputs = ref({
   countries: [] as string[],
   full_name: "",
   birth_year: "",
 });
 
-// Adapter for FormField (string) <-> countries array
 const amlCountriesText = computed({
   get: () => amlInputs.value.countries.join(", "),
   set: (v: string) => {
@@ -224,7 +242,6 @@ const amlCountriesText = computed({
   },
 });
 
-// Inputs (Document Verification)
 const docInputs = ref({
   country: "",
   id_type: "",
@@ -233,6 +250,14 @@ const docInputs = ref({
 const isAml = computed(() => kycType.value === "aml");
 const needsDocumentCapture = computed(() => kycType.value === "document");
 const selectedType = computed(() => verificationTypes.find((t) => t.id === kycType.value));
+
+const shouldShowSavedImages = computed(() => {
+  return kycType.value === "document" || kycType.value === "biometric";
+});
+
+const displayedSavedImages = computed(() => {
+  return shouldShowSavedImages.value ? savedImages.value : [];
+});
 
 function resetUi() {
   error.value = null;
@@ -277,7 +302,6 @@ async function readJson(resp: Response): Promise<SubmitResponse | null> {
   }
 }
 
-// --- SmileCapture-style camera binding ---
 const cameraEl = ref<HTMLElement | null>(null);
 
 watch(cameraEl, (newEl, oldEl) => {
@@ -285,7 +309,6 @@ watch(cameraEl, (newEl, oldEl) => {
   if (newEl) newEl.addEventListener("smart-camera-web.publish", handlePublish as any);
 });
 
-// Fired by smart-camera-web when user approves images
 async function handlePublish(event: Event) {
   if (kycType.value === "aml") {
     error.value = "AML does not use image capture. Use the AML submit button.";
@@ -326,7 +349,6 @@ async function handlePublish(event: Event) {
 
     if (json?.job_id) startPolling(json.job_id);
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error(err);
     error.value = err instanceof Error ? err.message : "Network/Server error";
   } finally {
@@ -334,7 +356,6 @@ async function handlePublish(event: Event) {
   }
 }
 
-// AML submit button (no camera)
 async function submitAml() {
   loading.value = true;
   resetUi();
@@ -364,7 +385,6 @@ async function submitAml() {
 
     if (json?.job_id) startPolling(json.job_id);
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error(err);
     error.value = err instanceof Error ? err.message : "Network/Server error";
   } finally {
@@ -411,7 +431,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Step transitions */
 .step-enter-active,
 .step-leave-active {
   transition: opacity 220ms ease, transform 220ms ease;
@@ -459,7 +478,6 @@ onUnmounted(() => {
   }
 }
 
-/* Camera styling (keeps HomeScreen UI wrapper) */
 .fade-in {
   animation: fadeIn 200ms ease-out;
 }
